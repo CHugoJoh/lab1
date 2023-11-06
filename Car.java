@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.lang.*;
 
 
 public abstract class   Car implements Movable {
@@ -59,14 +58,14 @@ public abstract class   Car implements Movable {
         decrementSpeed(amount);
     }
     public void move(){
-        // Y is forward upwards
+        // X is forward upwards
         x += currentSpeed * Math.cos(direction);
         y += currentSpeed * Math.sin(direction);
     }
     public void turnLeft(){
-        direction -= Math.PI / 2;
+        direction -= Math.PI / 2.0;
     }
     public void turnRight(){
-        direction += Math.PI / 2;
+        direction += Math.PI / 2.0;
     }
 }

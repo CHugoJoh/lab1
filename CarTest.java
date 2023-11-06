@@ -13,6 +13,10 @@ public class CarTest {
     }
     
     // EMILS TESTS 
+    @Test
+    public void speedFactor(){
+        assertEquals(1.25,saab.speedFactor(), 0.00001);
+    }
 
 
 

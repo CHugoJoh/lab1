@@ -24,7 +24,29 @@ public class CarTest {
 
     // WILLIAMS TESTS
 
+    @Test
+    public void testCurrentSpeed() {
+        assertEquals(0.0, saab.currentSpeed, 0.0001);
+    }
 
+    @Test
+    public void testStartEngine() {
+        saab.startEngine();
+        assertEquals(0.1, saab.currentSpeed, 0.0001);
+    }
+
+    @Test
+    public void testStopEngine() {
+        saab.startEngine();
+        saab.stopEngine();
+        assertEquals(0.0, saab.currentSpeed, 0.0001);
+    }
+
+    @Test
+    public void testGas() {
+        saab.gas(1.0);
+        assertEquals(125 * 0.01, saab.currentSpeed, 0.0001);
+    }
 
 
     // WILLIAM STOP TESTING
@@ -34,7 +56,7 @@ public class CarTest {
 
 
 
-    
+
     // HUGO IDK STOP IF YOU WANT
 
 }

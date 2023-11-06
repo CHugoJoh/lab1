@@ -11,6 +11,10 @@ public abstract class Car implements Movable {
     protected double x;
     protected double y;
 
+    public double getX() { return x; }
+
+    public double getY() { return y; }
+
     public int getNrDoors(){
         return nrDoors;
     }
@@ -54,6 +58,7 @@ public abstract class Car implements Movable {
         decrementSpeed(amount);
     }
     public void move(){
+        // Y is forward upwards
         x += currentSpeed * Math.cos(direction);
         y += currentSpeed * Math.sin(direction);
     }

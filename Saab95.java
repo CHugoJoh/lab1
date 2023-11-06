@@ -33,6 +33,4 @@ public class Saab95 extends Car{
     protected void decrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() - speedFactor() * amount;
     }
-
-    
 }

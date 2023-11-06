@@ -24,7 +24,6 @@ public class VolvoTest {
         assertEquals(1.25, volvo.speedFactor(), 0.00001);
 
     }
-
     @Test
     public void testVolvoName()
     {

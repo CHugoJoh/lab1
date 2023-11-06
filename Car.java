@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.lang.*;
 
 public abstract class Car implements Movable {
     protected int nrDoors; // Number of doors on the car
@@ -6,7 +7,9 @@ public abstract class Car implements Movable {
     protected double currentSpeed; // The current speed of the car
     protected Color color; // Color of the car
     protected String modelName; // The car model name
-
+    protected double direction;
+    protected double x;
+    protected double y;
 
     public int getNrDoors(){
         return nrDoors;
@@ -51,11 +54,13 @@ public abstract class Car implements Movable {
         decrementSpeed(amount);
     }
     public void move(){
-
+        x += currentSpeed * Math.cos(direction);
+        y += currentSpeed * Math.sin(direction);
     }
     public void turnLeft(){
-
+        direction -= Math.PI / 2;
     }
     public void turnRight(){
+        direction += Math.PI / 2;
     }
 }

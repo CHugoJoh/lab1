@@ -42,6 +42,10 @@ public abstract class   Car implements Movable {
 	    currentSpeed = 0;
     }
 
+    private void clampCurrentSpeed() {
+        currentSpeed = Math.max(0.0, Math.min(enginePower, currentSpeed));
+    }
+
     protected abstract double speedFactor();
 
     protected abstract void incrementSpeed(double amount);
@@ -55,12 +59,14 @@ public abstract class   Car implements Movable {
         else if (amount < 0.0)
             amount = 0.0;
         incrementSpeed(amount);
+        clampCurrentSpeed();
     }
 
     // TODO fix this method according to lab pm
     public void brake(double amount){
         amount = Math.min(1.0, Math.max(0.0, amount));
         decrementSpeed(amount);
+        clampCurrentSpeed();
     }
     public void move(){
         // X is forward upwards

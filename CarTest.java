@@ -11,7 +11,6 @@ public class CarTest {
     public void setup() {
         saab = new Saab95();
     }
-
     @Test
     public void testSpeedFactor(){
         assertEquals(1.25,saab.speedFactor(), 0.00001);

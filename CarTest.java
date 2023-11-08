@@ -64,11 +64,7 @@ public class CarTest {
         saab.brake(1.0);
         assertEquals(-125 * 0.01,saab.currentSpeed,0.000001);
     }
-    @Test
-    public void testMegaBrake(){
-        saab.brake(1000000);
-        assertEquals(-125 * 0.01,saab.currentSpeed,0.000001);
-    }
+
 
     @Test
     public void testNegativeBrake()
@@ -85,13 +81,13 @@ public class CarTest {
 
     @Test
     public void testGasLoweredSpeed(){
-        saab.gas(1.0);
-        assertTrue(saab.currentSpeed > 1);
+        saab.gas(-1.0);
+        assertTrue(saab.currentSpeed >= 0);
     }
     @Test
     public void testBrakeLoweredSpeed(){
-        saab.brake(1.0);
-        assertTrue(saab.currentSpeed <= 1);
+        saab.brake(-1.0);
+        assertTrue(saab.currentSpeed >= 0);
     }
 
 

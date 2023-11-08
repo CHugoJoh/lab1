@@ -14,12 +14,25 @@ public class CarTest {
     
     // EMILS TESTS 
     @Test
-    public void speedFactor(){
+    public void testSpeedFactor(){
         assertEquals(1.25,saab.speedFactor(), 0.00001);
     }
 
-
-
+    @Test
+    public void testCurrentSpeedMax(){
+        for (int i = 0; i < 1000; i++){
+            saab.gas(1.0); 
+        }
+        assertTrue(saab.currentSpeed <= saab.enginePower);
+    }
+    @Test
+    public void testCurrentSpeedMin(){
+        for (int i = 0; i < 1000; i++){
+            saab.gas(1.0);
+        }
+        saab.brake(1.0);
+        assertTrue(saab.currentSpeed >= 0);
+    }
     // EMIL STOP TESTING
 
     // WILLIAMS TESTS

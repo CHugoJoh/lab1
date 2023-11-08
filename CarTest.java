@@ -74,12 +74,19 @@ public class CarTest {
     @Test
     public void testNegativeBrake()
     {
-        saab.brake(-1.);
+        saab.brake(-1);
+        assertEquals(0, saab.currentSpeed, 0.000001);
+    }
+    @Test
+    public void testNegativeGas()
+    {
+        saab.gas(-1);
         assertEquals(0, saab.currentSpeed, 0.000001);
     }
 
 
 
     // HUGO IDK STOP IF YOU WANT
+
 
 }

@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 public class CarTest {
  
-    Saab95 saab;
+    Car saab;
 
     @Before
     public void setup() {
@@ -61,8 +61,10 @@ public class CarTest {
     }
     @Test
     public void testBrake(){
+        saab.gas(1.0);
+        saab.gas(1.0);
         saab.brake(1.0);
-        assertEquals(-125 * 0.01,saab.currentSpeed,0.000001);
+        assertEquals(125 * 0.01,saab.currentSpeed,0.000001);
     }
     @Test
     public void testMegaBrake(){

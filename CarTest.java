@@ -23,7 +23,7 @@ public class CarTest {
         for (int i = 0; i < 1000; i++){
             saab.gas(1.0); 
         }
-        assertTrue(saab.getCurrentSpeed() <= saab.enginePower);
+        assertTrue(saab.getCurrentSpeed() <= saab.getEnginePower());
     }
     @Test
     public void testCurrentSpeedMin(){

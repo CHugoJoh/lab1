@@ -49,10 +49,13 @@ public class CarTest {
         assertEquals(125 * 0.01, saab.currentSpeed, 0.0001);
     }
 
+    @Test
+    public void testLotsOfGas() {
+        saab.gas(69000000);
+        assertEquals(125 * 0.01, saab.currentSpeed, 0.0001);
+    }
 
-    // WILLIAM STOP TESTING
 
-    // HUGO TESTS
     @Test
     public void getCarColor(){
         assertEquals(saab.getColor(), saab.color);
@@ -61,6 +64,18 @@ public class CarTest {
     public void testBrake(){
         saab.brake(1.0);
         assertEquals(-125 * 0.01,saab.currentSpeed,0.000001);
+    }
+    @Test
+    public void testMegaBrake(){
+        saab.brake(1000000);
+        assertEquals(-125 * 0.01,saab.currentSpeed,0.000001);
+    }
+
+    @Test
+    public void testNegativeBrake()
+    {
+        saab.brake(-1.);
+        assertEquals(0, saab.currentSpeed, 0.000001);
     }
 
 

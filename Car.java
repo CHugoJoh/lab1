@@ -1,5 +1,5 @@
 import java.awt.*;
-
+import java.math.*;
 
 public abstract class   Car implements Movable {
     protected int nrDoors; // Number of doors on the car
@@ -58,6 +58,7 @@ public abstract class   Car implements Movable {
 
     // TODO fix this method according to lab pm
     public void brake(double amount){
+        amount = Math.min(1.0, Math.max(0.0, amount));
         decrementSpeed(amount);
     }
     public void move(){

@@ -18,16 +18,14 @@ public class CarTest {
 
     @Test
     public void testCurrentSpeedMax(){
-        for (int i = 0; i < 1000; i++){
+        for (int i = 0; i < 1000; i++)
+        {
             saab.gas(1.0); 
         }
         assertTrue(saab.getCurrentSpeed() <= saab.getEnginePower());
     }
     @Test
     public void testCurrentSpeedMin(){
-        for (int i = 0; i < 1000; i++){
-            saab.gas(1.0);
-        }
         saab.brake(1.0);
         assertTrue(saab.getCurrentSpeed() >= 0);
     }

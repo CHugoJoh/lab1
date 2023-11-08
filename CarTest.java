@@ -39,32 +39,32 @@ public class CarTest {
 
     @Test
     public void testCurrentSpeed() {
-        assertEquals(0.0, saab.currentSpeed, 0.0001);
+        assertEquals(0.0, saab.getCurrentSpeed(), 0.0001);
     }
 
     @Test
     public void testStartEngine() {
         saab.startEngine();
-        assertEquals(0.1, saab.currentSpeed, 0.0001);
+        assertEquals(0.1, saab.getCurrentSpeed(), 0.0001);
     }
 
     @Test
     public void testStopEngine() {
         saab.startEngine();
         saab.stopEngine();
-        assertEquals(0.0, saab.currentSpeed, 0.0001);
+        assertEquals(0.0, saab.getCurrentSpeed(), 0.0001);
     }
 
     @Test
     public void testGas() {
         saab.gas(1.0);
-        assertEquals(125 * 0.01, saab.currentSpeed, 0.0001);
+        assertEquals(125 * 0.01, saab.getCurrentSpeed(), 0.0001);
     }
 
     @Test
     public void testLotsOfGas() {
         saab.gas(69000000);
-        assertEquals(125 * 0.01, saab.currentSpeed, 0.0001);
+        assertEquals(125 * 0.01, saab.getCurrentSpeed(), 0.0001);
     }
 
 
@@ -77,7 +77,7 @@ public class CarTest {
         saab.gas(1.0);
         saab.gas(1.0);
         saab.brake(1.0);
-        assertEquals(125 * 0.01,saab.currentSpeed,0.000001);
+        assertEquals(125 * 0.01,saab.getCurrentSpeed(),0.000001);
     }
 
 
@@ -85,24 +85,24 @@ public class CarTest {
     public void testNegativeBrake()
     {
         saab.brake(-1);
-        assertEquals(0, saab.currentSpeed, 0.000001);
+        assertEquals(0, saab.getCurrentSpeed(), 0.000001);
     }
     @Test
     public void testNegativeGas()
     {
         saab.gas(-1);
-        assertEquals(0, saab.currentSpeed, 0.000001);
+        assertEquals(0, saab.getCurrentSpeed(), 0.000001);
     }
 
     @Test
     public void testGasLoweredSpeed(){
         saab.gas(-1.0);
-        assertTrue(saab.currentSpeed >= 0);
+        assertTrue(saab.getCurrentSpeed() >= 0);
     }
     @Test
     public void testBrakeLoweredSpeed(){
         saab.brake(-1.0);
-        assertTrue(saab.currentSpeed >= 0);
+        assertTrue(saab.getCurrentSpeed() >= 0);
     }
 
 

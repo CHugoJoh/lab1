@@ -23,7 +23,7 @@ public class CarTest {
         for (int i = 0; i < 1000; i++){
             saab.gas(1.0); 
         }
-        assertTrue(saab.currentSpeed <= saab.enginePower);
+        assertTrue(saab.getCurrentSpeed() <= saab.enginePower);
     }
     @Test
     public void testCurrentSpeedMin(){
@@ -31,7 +31,7 @@ public class CarTest {
             saab.gas(1.0);
         }
         saab.brake(1.0);
-        assertTrue(saab.currentSpeed >= 0);
+        assertTrue(saab.getCurrentSpeed() >= 0);
     }
     // EMIL STOP TESTING
 

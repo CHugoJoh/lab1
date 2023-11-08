@@ -1,6 +1,7 @@
 
 
 public class app{
+
     public static void main(String[] args){
         Saab95 saab = new Saab95();
         Volvo240 volvo = new Volvo240();
@@ -9,8 +10,8 @@ public class app{
         int ticks = 0;
 
         while(saab.getCurrentSpeed() < 100 && volvo.getCurrentSpeed() < 100){
-            saab.gas(1);
-            volvo.gas(1);
+            saab.gas(6000);
+            volvo.gas(6000); //gasgasgasgasgasgasgasgasgasgasgasgasgasgasgas
             ticks++;
         }
 

@@ -1,5 +1,6 @@
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,8 +18,8 @@ public class MovableTest {
     public void testMoveForward() {
         movable.startEngine();
         movable.move();
-        assertEquals(0.1, movable.getX(), 0.000001);
-        assertEquals(0.0, movable.getY(), 0.000001);
+        Assert.assertEquals(0.1, movable.getX(), 0.000001);
+        Assert.assertEquals(0.0, movable.getY(), 0.000001);
     }
 
     @Test
@@ -27,8 +28,8 @@ public class MovableTest {
         movable.turnLeft();
         movable.turnLeft(); 
         movable.move();
-        assertEquals(-0.1, movable.getX(), 0.000001);
-        assertEquals(0.0, movable.getY(), 0.000001);
+        Assert.assertEquals(-0.1, movable.getX(), 0.000001);
+        Assert.assertEquals(0.0, movable.getY(), 0.000001);
     }
 
     @Test
@@ -36,8 +37,8 @@ public class MovableTest {
         movable.turnLeft();
         movable.startEngine();
         movable.move();
-        assertEquals(0.0, movable.getX(), 0.000001);
-        assertEquals(-0.1, movable.getY(), 0.000001);
+        Assert.assertEquals(0.0, movable.getX(), 0.000001);
+        Assert.assertEquals(-0.1, movable.getY(), 0.000001);
     }
 
     @Test
@@ -45,8 +46,8 @@ public class MovableTest {
         movable.turnRight();
         movable.startEngine();
         movable.move();
-        assertEquals(0.0, movable.getX(), 0.000001);
-        assertEquals(0.1, movable.getY(), 0.000001);
+        Assert.assertEquals(0.0, movable.getX(), 0.000001);
+        Assert.assertEquals(0.1, movable.getY(), 0.000001);
     }
 
     @Test
@@ -66,7 +67,7 @@ public class MovableTest {
         movable.turnLeft();
         movable.turnLeft();
         movable.move();
-        assertEquals(0.0, movable.getX(), 0.000001);
-        assertEquals(-0.1, movable.getY(), 0.000001);
+        Assert.assertEquals(0.0, movable.getX(), 0.000001);
+        Assert.assertEquals(-0.1, movable.getY(), 0.000001);
     }
 }

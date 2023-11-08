@@ -1,8 +1,7 @@
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 public class CarTest {
  
@@ -84,6 +83,16 @@ public class CarTest {
         assertEquals(0, saab.currentSpeed, 0.000001);
     }
 
+    @Test
+    public void testGasLoweredSpeed(){
+        saab.gas(1.0);
+        assertTrue(saab.currentSpeed > 1);
+    }
+    @Test
+    public void testBrakeLoweredSpeed(){
+        saab.brake(1.0);
+        assertTrue(saab.currentSpeed <= 1);
+    }
 
 
     // HUGO IDK STOP IF YOU WANT

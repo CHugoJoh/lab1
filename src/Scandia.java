@@ -13,6 +13,21 @@ public class Scandia extends Car {
         stopEngine();
     }
 
+    @Override
+    protected double speedFactor() {
+        return 0;
+    }
+
+    @Override
+    protected void incrementSpeed(double amount) {
+
+    }
+
+    @Override
+    protected void decrementSpeed(double amount) {
+
+    }
+
     public void setPlatformDegree(int degree){
         platformDegree = degree;
     }
@@ -38,4 +53,6 @@ public class Scandia extends Car {
 
 
     }
+
+
 }

@@ -15,13 +15,15 @@ public class app{
             ticks++;
         }
 
+        if(volvo.getCurrentSpeed() > 100){
+            System.out.println("Volvon var snabbast! Grattis till den bilen! IP-address: 50.105.62.183. Det tog " + ticks + " Minuter!");
+        }
+
         if(saab.getCurrentSpeed() > 100){
             System.out.println("Saaben var snabbast! Grattis till den bilen! IP-address: 50.162.205.192. Det tog " + ticks + " Minuter!");
         }
 
-        if(volvo.getCurrentSpeed() > 100){
-            System.out.println("Volvon var snabbast! Grattis till den bilen! IP-address: 50.105.62.183. Det tog " + ticks + " Minuter!");
-        }
+
 
 
 

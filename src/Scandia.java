@@ -1,9 +1,9 @@
 import java.awt.*;
 
 public class Scandia extends Car {
-    private static int platformDegree = 0;
+    private static double platformDegree = 0;
 
-    public Scandia(){
+    public Scandia() {
         nrDoors = 2000;
         enginePower = 200;
         color = Color.red;
@@ -28,24 +28,30 @@ public class Scandia extends Car {
 
     }
 
-    public void setPlatformDegree(int degree){
-        platformDegree = degree;
-    }
-    public int getPlatformDegree(){
+    public int getPlatformDegree() {
         return platformDegree;
     }
 
     public void clampDegree() {
         if (getPlatformDegree() < 0.0) {
-            setPlatformDegree(0);
+            platformDegree = 0;
         } else if (getPlatformDegree() > 70) {
-            setPlatformDegree(70);
+            platformDegree = 70;
         }
     }
 
     public void raise(int amount) {
-        if (getCurrentSpeed() == 0) {
-            setPlatformDegree(amount);
+        if (getCurrentSpeed() == 0.0) {
+            platformDegree += amount;
+            clampDegree();
+        } else {
+            System.out.println("Du står inte stilla. Parkera först.");
+        }
+    }
+
+    public void lower(int amount) {
+        if (getCurrentSpeed() == 0.0) {
+            platformDegree -= amount;
             clampDegree();
         } else {
             System.out.println("Du står inte stilla. Parkera först.");
@@ -53,6 +59,22 @@ public class Scandia extends Car {
 
 
     }
-
-
+    @Override
+    public void gas(double amount){
+        if(getPlatformDegree() != 0 ){
+            System.out.println("Flaket måste vara nere lol");
+            }
+        else{
+            incrementSpeed(amount);
+        }
+    }
+    @Override
+    public void brake(double amount){
+        if(getPlatformDegree() != 0 ){
+            System.out.println("Flaket måste vara nere lol");
+        }
+        else{
+            decrementSpeed(amount);
+        }
+    }
 }

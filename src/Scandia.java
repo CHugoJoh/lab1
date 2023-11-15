@@ -4,7 +4,7 @@ public class Scandia extends Car implements HasRamp {
     private static double platformDegree = 0;
 
     public Scandia() {
-        nrDoors = 2000;
+        nrDoors = 2;
         enginePower = 200;
         color = Color.red;
         modelName = "Scania";
@@ -15,17 +15,18 @@ public class Scandia extends Car implements HasRamp {
 
     @Override
     protected double speedFactor() {
-        return 1000;
+        return enginePower * 0.01;
     }
 
     @Override
     protected void incrementSpeed(double amount) {
-        if(getRampDegree() != 0){
-            System.out.println("Flaket måste vara nere lol");
+        if(getRampDegree() != 0) {
+            System.out.println("Flaket måste vara nere.");
         }
         else{
-            incrementSpeed(amount);
+            currentSpeed = getCurrentSpeed() + speedFactor() * amount;
         }
+
     }
 
     @Override

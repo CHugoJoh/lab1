@@ -7,4 +7,8 @@ public abstract class TransportableCar extends Car implements Transportable{
         return hypotenuse < 5;
     }
 
+    public void offLoad(double x, double y){
+        
+    }
+
 }

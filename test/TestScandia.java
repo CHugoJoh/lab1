@@ -13,7 +13,7 @@ public class ScandiaTest{
 
     @Test
     public void testRamp(){
-        scandia.raiseRamp(99999999.0);
+        scandia.raiseRamp (99999999.0);
         assertEquals(70.0,scandia.getRampDegree());
     }
 }

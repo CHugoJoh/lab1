@@ -20,7 +20,7 @@ public class Scandia extends Car implements HasRamp {
 
     @Override
     protected void incrementSpeed(double amount) {
-        if(getRampDegree() != 0 ){
+        if(getRampDegree() != 0){
             System.out.println("Flaket måste vara nere lol");
         }
         else{

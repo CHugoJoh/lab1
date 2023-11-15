@@ -2,6 +2,7 @@ import java.util.*;
 
 public class CarTransporter extends Car implements HasRamp {
 
+    final double rampDownDegree = 20.0;
     private Stack<Transportable> stack = new Stack<Transportable>(); 
     private int maxLoad;
     private double rampDegree = 0.0;
@@ -28,7 +29,10 @@ public class CarTransporter extends Car implements HasRamp {
 
     @Override
     public void raiseRamp() {
-        rampDegree = 90;
+        if (currentSpeed > 0.000000001) 
+            System.out.println("Hallå stå still om du ska göra så!");
+        else
+            rampDegree = rampDownDegree;
     }
 
     @Override
@@ -41,4 +45,14 @@ public class CarTransporter extends Car implements HasRamp {
         return rampDegree;
     }
     
+    private boolean isRampDown() {
+        return Math.abs(rampDegree - rampDownDegree) < 0.0000001;
+    }
+
+    public void load(Transportable transportable) {
+        if (!isRampDown())
+            System.out.println("Men släpp ner rampen dårå!");
+
+    }
+
 }

@@ -8,7 +8,8 @@ public abstract class TransportableCar extends Car implements Transportable{
     }
 
     public void offLoad(double x, double y){
-
+        this.x = x;
+        this.y = y;
     }
 
 }

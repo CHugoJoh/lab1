@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Scandia extends Car {
+public class Scandia extends Car implements HasRamp {
     private static double platformDegree = 0;
 
     public Scandia() {
@@ -15,66 +15,59 @@ public class Scandia extends Car {
 
     @Override
     protected double speedFactor() {
-        return 0;
+        return 1000;
     }
 
     @Override
     protected void incrementSpeed(double amount) {
-
-    }
-
-    @Override
-    protected void decrementSpeed(double amount) {
-
-    }
-
-    public int getPlatformDegree() {
-        return platformDegree;
-    }
-
-    public void clampDegree() {
-        if (getPlatformDegree() < 0.0) {
-            platformDegree = 0;
-        } else if (getPlatformDegree() > 70) {
-            platformDegree = 70;
-        }
-    }
-
-    public void raise(int amount) {
-        if (getCurrentSpeed() == 0.0) {
-            platformDegree += amount;
-            clampDegree();
-        } else {
-            System.out.println("Du står inte stilla. Parkera först.");
-        }
-    }
-
-    public void lower(int amount) {
-        if (getCurrentSpeed() == 0.0) {
-            platformDegree -= amount;
-            clampDegree();
-        } else {
-            System.out.println("Du står inte stilla. Parkera först.");
-        }
-
-
-    }
-    @Override
-    public void gas(double amount){
-        if(getPlatformDegree() != 0 ){
+        if(getRampDegree() != 0 ){
             System.out.println("Flaket måste vara nere lol");
-            }
+        }
         else{
             incrementSpeed(amount);
         }
     }
+
     @Override
-    public void brake(double amount){
-        if(getPlatformDegree() != 0 ){
+    protected void decrementSpeed(double amount) {
+        if(getRampDegree() != 0 ){
             System.out.println("Flaket måste vara nere lol");
         }
         else{
             decrementSpeed(amount);
         }
+    }
+    public void clampDegree() {
+        if (getRampDegree() < 0.0) {
+            platformDegree = 0;
+        } else if (getRampDegree() > 70) {
+            platformDegree = 70;
+        }
+    }
+
+
+    @Override
+    public void raiseRamp() {
+        if (getCurrentSpeed() == 0.0) {
+            platformDegree += 1;
+            clampDegree();
+        } else {
+            System.out.println("Du står inte stilla. Parkera först.");
+        }
+    }
+
+    @Override
+    public void lowerRamp() {
+        if (getCurrentSpeed() == 0.0) {
+            platformDegree -= 1;
+            clampDegree();
+        } else {
+            System.out.println("Du står inte stilla. Parkera först.");
+        }
+    }
+
+    @Override
+    public double getRampDegree() {
+        return platformDegree;
     }
 }

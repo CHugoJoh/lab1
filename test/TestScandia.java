@@ -3,7 +3,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestScandia{
+public class ScandiaTest{
 
     private Scandia scandia;
     @Before
@@ -13,7 +13,7 @@ public class TestScandia{
 
     @Test
     public void testRamp(){
-        scandia.raise(99999999);
-        assertEquals(70,scandia.getPlatformDegree());
+        scandia.raiseRamp(99999999.0);
+        assertEquals(70.0,scandia.getRampDegree());
     }
 }

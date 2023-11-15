@@ -1,20 +1,26 @@
 import java.util.*;
+import java.awt.*;
 
 public class CarTransporter extends Car implements HasRamp {
 
     final double rampDownDegree = 20.0;
-    private Stack<Transportable> stack = new Stack<Transportable>(); 
+    private Stack<Transportable> loadedCars = new Stack<Transportable>(); 
     private int maxLoad;
     private double rampDegree = 0.0;
 
     CarTransporter() {
         maxLoad = 8;
+        nrDoors = 2;
+        color = Color.decode("#aa90F1");
+        enginePower = 300;
+        modelName = "Car transporter";
+        stopEngine();
     }
 
     @Override
     protected double speedFactor() {
         // TODO: Make more sense
-        return enginePower - maxLoad / (stack.size() + 1.0); 
+        return enginePower - maxLoad / (loadedCars.size() + 1.0); 
     }
 
     @Override
@@ -52,7 +58,27 @@ public class CarTransporter extends Car implements HasRamp {
     public void load(Transportable transportable) {
         if (!isRampDown())
             System.out.println("Men släpp ner rampen dårå!");
+        else if (!transportable.isCloseEnough(getX(), getY()))
+            System.out.println("Ställ bilen näärmare!");
+        else if (loadedCars.size() + 1 >= maxLoad)
+            System.out.println("För mänge biler!");
+        else
+            loadedCars.push(transportable);
+    }
 
+    public void unload() {
+        if (!isRampDown())
+            System.out.println("Men släpp ner rampen dårå!");
+        else if (loadedCars.size() == 0)
+            System.out.println("Schlut på biler!");
+        else 
+            loadedCars.pop().offLoad(getX(), getY()); 
+    }
+
+    @Override
+    public void move(){
+        super.move();
+        loadedCars.forEach(x -> x.transport(getX(), getY()));
     }
 
 }

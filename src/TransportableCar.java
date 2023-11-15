@@ -6,10 +6,16 @@ public abstract class TransportableCar extends Car implements Transportable{
 
         return hypotenuse < 5;
     }
-
     public void offLoad(double x, double y){
         this.x = x;
         this.y = y;
+    }
+    public void transport(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+    public void onLoad(){
+        stopEngine();
     }
 
 }

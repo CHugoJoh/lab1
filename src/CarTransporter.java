@@ -61,7 +61,7 @@ public class CarTransporter extends Car implements HasRamp {
         else if (!transportable.isCloseEnough(getX(), getY()))
             System.out.println("Ställ bilen näärmare!");
         else if (loadedCars.size() + 1 >= maxLoad)
-            System.out.println("För mänge biler!");
+            System.out.println("För mänge biler!"); //biler??
         else
             loadedCars.push(transportable);
     }

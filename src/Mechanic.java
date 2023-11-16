@@ -4,8 +4,8 @@ import java.util.*;
 public class Mechanic<T extends Car> {
 
     public Mechanic(){
-        mechSize = 0;
-        mechName = "";
+        mechSize = 4;
+        String mechName = "Generic Mechanic";
     }
 
     protected static int mechSize;

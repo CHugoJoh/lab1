@@ -32,7 +32,7 @@ public class Scandia extends Car implements HasRamp {
     @Override
     protected void decrementSpeed(double amount) {
         if(getRampDegree() != 0 ){
-            System.out.println("Flaket måste vara nere lol");
+            System.out.println("Flaket måste vara nere.");
         }
         else{
             decrementSpeed(amount);

@@ -1,0 +1,30 @@
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class MechanicTest<T> {
+    T mechanic;
+    @Before
+    public void setup(){
+        mechanic = new Mechanic();
+        volvo = new Volvo240();
+        saab = new Saab95();
+        scandia = new Scandia();
+
+    }
+    @Test
+    public void testMechSize(){
+        mechanic.mechSize(10);
+        assertTrue(mechanic.mechSize() == 10);
+
+    }
+    @Test
+    public void testLoad(){
+        for (int i; i = 4; i++){
+            mechanic.load(volvo);
+        }
+        assertTrue(mechanic.carsAtShop().size() == 4)
+    }
+
+}

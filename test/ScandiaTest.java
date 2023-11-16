@@ -32,7 +32,7 @@ public class ScandiaTest{
     public void testRampStop(){
         scandia.raiseRamp();
         scandia.incrementSpeed(100);
-        assertTrue("Flaket måste vara nere.", scandia.getCurrentSpeed() == 0);
+        assertTrue(scandia.getCurrentSpeed() == 0);
 
     }
 }

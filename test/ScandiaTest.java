@@ -28,5 +28,11 @@ public class ScandiaTest{
         }
         assertEquals(70, scandia.getRampDegree(), 0.0000001);
     }
+    @Test
+    public void testRampStop(){
+        scandia.raiseRamp();
+        scandia.incrementSpeed(100);
+        assertTrue("Flaket måste vara nere.", scandia.getCurrentSpeed() == 0);
 
+    }
 }

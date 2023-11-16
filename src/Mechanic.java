@@ -1,7 +1,26 @@
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Mechanic<T extends Car> {
+
+    public Mechanic(){
+        mechSize = 0;
+        mechName = "";
+    }
+
     protected static int mechSize;
+
+    protected T mechanic;
+
+    public void setMechanic(T mechanic){
+        this.mechanic = mechanic;
+        getMechSize();
+
+
+    }
+    public T getMechanic(T mechanic){
+        return mechanic;
+    }
 
     public int getMechSize() {
         return mechSize;
@@ -11,7 +30,12 @@ public class Mechanic<T extends Car> {
     }
     protected ArrayList<T> carsAtShop = new ArrayList<>(mechSize);
     public void load(T car){
-        carsAtShop.add(car);
+        if(carsAtShop.size() < mechSize) {
+            carsAtShop.add(car);
+        }
+        else{
+            System.out.println("Funk off");
+        }
     }
 
     public void unload(T car){
@@ -23,5 +47,8 @@ public class Mechanic<T extends Car> {
         }
 
     }
+    public ArrayList<T> checkCars(){
+        System.out.println(carsAtShop);
+        return carsAtShop;}
 
 }

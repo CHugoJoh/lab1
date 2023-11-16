@@ -2,6 +2,8 @@ import java.awt.image.ConvolveOp;
 import java.util.ArrayList;
 
 public class VolvoMechanic extends Mechanic<Volvo240>{
+
+
     public VolvoMechanic(){
         mechSize = 4;
         carsAtShop = new ArrayList<>();

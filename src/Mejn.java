@@ -5,18 +5,6 @@ public class Mejn {
         Scandia scandia = new Scandia();
         VolvoMechanic vmech = new VolvoMechanic();
 
-        vmech.load(volvo1);
-        vmech.load(volvo2);
-        vmech.checkCars();
-
-        vmech.unload(volvo1);
-        vmech.checkCars();
-
-        vmech.load(volvo2);
-        vmech.load(volvo2);
-        vmech.load(volvo2);
-        vmech.load(volvo2);
-        vmech.checkCars();
 
 
 

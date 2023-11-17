@@ -20,15 +20,23 @@ public class MechanicTest<T extends Car> {
     public void testMechSize(){
         mechanic.setMechSize(10);
         assertEquals(10, mechanic.getMechSize());
-
     }
     @Test
     public void testLoad(){
-        for (int i = 0; i < 4; i++){
+        for (int i = 0; i < 8; i++){
             mechanic.load(volvo);
         }
         assertEquals(4, mechanic.carsAtShop.size());
     }//*
+
+    @Test
+    public void testUnLoad(){
+        for(int i = 0; i < 4; i++){
+            mechanic.load(volvo);
+        }
+        mechanic.unload(volvo);
+        assertEquals(3, mechanic.carsAtShop.size());
+
     }
 
 }

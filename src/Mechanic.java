@@ -35,9 +35,4 @@ public class Mechanic<T extends Car> {
             System.out.println("the car is in another verkstad mate.");
         }
     }
-
-    public ArrayList<T> checkCars(){
-        System.out.println(carsAtShop);
-        return carsAtShop;
-    }
 }

@@ -1,4 +1,4 @@
-public abstract class TransportableCar extends Car implements Transportable{
+public abstract class TransportableCar extends Car{
     public boolean isCloseEnough(double x, double y){
         double dX = x - getX();
         double dY = y - getY();

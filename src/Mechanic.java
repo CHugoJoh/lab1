@@ -23,7 +23,7 @@ public class Mechanic<T extends Car> {
             carsAtShop.add(car);
         }
         else{
-            System.out.println("Funk off");
+            System.out.println("We are at full capacity. Come back another day");
         }
     }
 

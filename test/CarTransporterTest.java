@@ -48,5 +48,4 @@ public class CarTransporterTest {
         for (int i = 0; i < 10; i++)
             transporter.move();
         Assert.assertEquals(1, saab.getX(), 0.00001);
-    }
 }

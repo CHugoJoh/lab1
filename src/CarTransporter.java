@@ -20,7 +20,7 @@ public class CarTransporter extends Car implements HasRamp {
     @Override
     protected double speedFactor() {
         // TODO: Make more sense
-        return enginePower - maxLoad / (loadedCars.size() + 1.0); 
+        return enginePower - loadedCars.size() / maxLoad; 
     }
 
     @Override

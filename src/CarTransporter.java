@@ -4,7 +4,7 @@ import java.awt.*;
 public class CarTransporter extends Car implements HasRamp {
 
     final double rampDownDegree = 20.0;
-    private Stack<Transportable> loadedCars = new Stack<Transportable>(); 
+    private Stack<TransportableCar> loadedCars = new Stack<TransportableCar>(); 
     private int maxLoad;
     private double rampDegree = 0.0;
 
@@ -50,12 +50,14 @@ public class CarTransporter extends Car implements HasRamp {
     public double getRampDegree() {
         return rampDegree;
     }
+
+    public int numberOfLoadedCars() { return loadedCars.size(); }
     
     private boolean isRampDown() {
         return Math.abs(rampDegree - rampDownDegree) < 0.0000001;
     }
 
-    public void load(Transportable transportable) {
+    public void load(TransportableCar transportable) {
         if (!isRampDown())
             System.out.println("Men släpp ner rampen dårå!");
         else if (!transportable.isCloseEnough(getX(), getY()))

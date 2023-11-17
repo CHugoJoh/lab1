@@ -7,6 +7,5 @@ public class CarTransporterTest {
 
     @Test
     public void Test() {
-        
     }
 }

@@ -7,10 +7,10 @@ public class MechanicTest<T extends Car> {
     Car volvo;
     Car saab;
     Car scandia;
-    Mechanic<T> mechanic;
+    Mechanic<Car> mechanic;
     @Before
     public void setup(){
-        mechanic = new Mechanic<>();
+        mechanic = new Mechanic<Car>();
         volvo = new Volvo240();
         saab = new Saab95();
         scandia = new Scandia();
@@ -22,14 +22,13 @@ public class MechanicTest<T extends Car> {
         assertEquals(10, mechanic.getMechSize());
 
     }
-    /*@Test
+    @Test
     public void testLoad(){
         for (int i = 0; i < 4; i++){
             mechanic.load(volvo);
         }
-        assertTrue(mechanic.carsAtShop().size() == 4);
+        assertEquals(4, mechanic.carsAtShop.size());
     }//*
     }
-     */
 
 }

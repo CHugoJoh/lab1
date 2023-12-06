@@ -4,8 +4,8 @@ import java.awt.*;
 public class CarTransporter extends Car implements HasRamp {
 
     final double rampDownDegree = 20.0;
-    private Stack<TransportableCar> loadedCars = new Stack<TransportableCar>(); 
-    private int maxLoad;
+    private final Stack<TransportableCar> loadedCars = new Stack<TransportableCar>();
+    private final int maxLoad;
     private double rampDegree = 0.0;
 
     CarTransporter() {
@@ -20,7 +20,7 @@ public class CarTransporter extends Car implements HasRamp {
     @Override
     protected double speedFactor() {
         // TODO: Make more sense
-        return enginePower - loadedCars.size() / maxLoad; 
+        return enginePower - loadedCars.size()/maxLoad;
     }
 
     @Override

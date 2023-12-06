@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Mechanic<T extends Car> {
+public class Mechanic<T extends TransportableCar> {
 
     protected static int mechSize;
 
@@ -17,7 +17,7 @@ public class Mechanic<T extends Car> {
     }
 
     protected ArrayList<T> carsAtShop = new ArrayList<>(mechSize);
-    
+
     public void load(T car){
         if(carsAtShop.size() < mechSize) {
             carsAtShop.add(car);

@@ -1,3 +1,4 @@
+import com.sun.jdi.connect.Transport;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,10 +8,10 @@ public class MechanicTest<T extends Car> {
     Car volvo;
     Car saab;
     Car scandia;
-    Mechanic<Car> mechanic;
+    Mechanic<TransportableCar> mechanic;
     @Before
     public void setup(){
-        mechanic = new Mechanic<Car>();
+        mechanic = new Mechanic<>();
         volvo = new Volvo240();
         saab = new Saab95();
         scandia = new Scandia();

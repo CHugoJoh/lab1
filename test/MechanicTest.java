@@ -5,16 +5,14 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class MechanicTest<T extends Car> {
-    Car volvo;
-    Car saab;
-    Car scandia;
+    TransportableCar volvo;
+    TransportableCar saab;
     Mechanic<TransportableCar> mechanic;
     @Before
     public void setup(){
         mechanic = new Mechanic<>();
         volvo = new Volvo240();
         saab = new Saab95();
-        scandia = new Scandia();
 
     }
     @Test
